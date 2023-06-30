@@ -27,11 +27,19 @@
  */
 import React from "react";
 import { createRoot } from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+// import './index.css';
+import './assets/scss/index.css';
 import App from './app';
 
 // console.log('👋 This message is being logged by "renderer.js", included via webpack');
 
-const root = createRoot(document.getElementById("app"));
+const root = createRoot(document.getElementById("app") as HTMLElement);
 
-root.render(<App />);
+root.render(
+    <React.StrictMode>
+        {/* <BrowserRouter> */}
+            <App />
+        {/* </BrowserRouter> */}
+    </React.StrictMode>
+);
