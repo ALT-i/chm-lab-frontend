@@ -65,24 +65,34 @@ function SectionMainHero () {
 
     }
 
-    useEffect(() => {
-       const levels = JSON.parse(window.localStorage.getItem("oldlevels"))
-          setTimeout(() => {
-           if (levels){for (const level of levels){
-            document.getElementById(level).classList.add("active")
-        }}
-    }, 1)
-    }, [levelState])
+    // useEffect(() => {
+    //    const levels = JSON.parse(window.localStorage.getItem("oldlevels"))
+    //       setTimeout(() => {
+    //        if (levels){for (const level of levels){
+    //         document.getElementById(level).classList.add("active")
+    //     }}
+    // }, 1)
+    // }, [levelState])
 
     return ( 
         <div className="main-hero">
-            <div className="difficulty-selection">
-                <DisplayLevels activateLink={activateLink}/>
-            </div>
             <div className="hero-section">
                 <div className="intro-paragraph">
-                    <p>Take time to see and learn from all the available questions and answers. If your down for it, take a <Link to='/quiz'>quiz</Link></p>
+                    <p>Class title</p>
                 </div>
+            </div>
+            <div className="difficulty-selection">
+                <ul>
+                    <li>
+                        Go to class selection
+                    </li>
+                    <li>
+                        About this class
+                    </li>
+                    <li>
+                        Attempt quiz
+                    </li>
+                </ul>
             </div>
         </div>
     );

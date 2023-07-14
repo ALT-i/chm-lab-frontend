@@ -3,8 +3,8 @@ import React from 'react';
 import SectionMainHeader from './sections/SectionMainHeader';
 
 function IndexHeader () {
-    return ( 
-        <div className='index-header'>
+    return (
+        <div>
             <SectionMainHeader />
         </div>
      );

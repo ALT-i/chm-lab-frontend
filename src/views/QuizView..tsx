@@ -5,7 +5,7 @@ import IndexHeader from "../components/IndexHeader";
 
 const QuizView = () => {
     return ( 
-        <div>
+        <div className="components">
             <IndexHeader />
             <Quiz />
         </div>

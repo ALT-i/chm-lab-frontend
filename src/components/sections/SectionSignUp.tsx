@@ -29,7 +29,7 @@ function SectionSignUp () {
         <div className="section-sign-up">
             {feedback && <p className="alert">{feedback}</p>}
             <br/>
-            <form action="" onSubmit={authSignUp} className="sign-up">
+            <form action="" onSubmit={authSignUp} id="sign-up" className="sign-up">
                 <div>
                     <label htmlFor="fname">First name:</label>
                     <input id="fname" type="text" name="first_name"/>
@@ -47,7 +47,8 @@ function SectionSignUp () {
                     <input id="pwd" type="password" name="password"/>
                 </div>
                 <div className="submit">
-                <Link to="/">Sign up</Link>
+                    {/* <Link className="button" to="/">Sign up</Link> */}
+                    <button value="Submit" type="submit" form="sign-up">Sign up</button>
                 </div>
             </form>
         </div>

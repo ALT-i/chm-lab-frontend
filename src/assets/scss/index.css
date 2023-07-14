@@ -1,16 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 html body {
-  background-image: linear-gradient(to bottom, #100382 2%, #120770 20%, #0a0249 80%);
+  background-image: linear-gradient(to bottom, #03ca4f 2%, #058937 20%, #025c24 80%);
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 86px;
-  padding: 0 0.8em;
+}
+
+.components {
+  height: 98vh;
+  margin: auto;
 }
 
 .main-header {
   text-align: center;
-  width: 100%;
   height: 80px;
+  margin-top: -1em;
 }
 .main-header h1 {
   font-size: 2.7em;
@@ -39,7 +42,7 @@ html body {
   margin: 0 1.3em;
   border: 3px solid rgba(193, 199, 152, 0.859);
   border-radius: 2em;
-  font-size: 0.8em;
+  font-size: 1.2em;
   font-weight: 700;
   transition: 0.3s ease-in-out;
   cursor: pointer;
@@ -84,6 +87,7 @@ html body {
 
 .display-panel {
   margin-left: 14em;
+  margin-bottom: 3em;
   overflow: auto;
   background: rgba(193, 199, 152, 0.859);
   box-shadow: 1px 2px 28px rgba(113, 116, 97, 0.8588235294) inset;
@@ -145,30 +149,62 @@ html body {
   border-radius: 1em;
   border: 3px solid rgba(221, 192, 209, 0.7450980392);
 }
+.side-panel .category-view .panel-title {
+  overflow-wrap: break-word;
+}
 .side-panel .category-view .panel-title h3 {
   font-size: 1.4em;
   font-weight: bolder;
-  padding: 0.1em 1em 0.5em 1em;
+  padding: 0.1em 0.2em 0.5em 0.2em;
+  text-align: center;
 }
 .side-panel .category-view ul {
   padding: 0.2em 0 2em 0;
 }
-.side-panel .category-view ul li {
+.side-panel .category-view ul .options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.side-panel .category-view ul .options .options-box-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.side-panel .category-view ul .options .options-box-header li {
   list-style: none;
   padding: 1.2em 0 1.2em 1.2em;
-  border-top: 1px solid #1e0303;
   transition: 0.3s ease-in-out;
   font-size: 1em;
   font-weight: 600;
   cursor: pointer;
 }
-.side-panel .category-view ul li:hover {
-  background: rgb(143, 148, 106);
-  border-bottom: 1px solid #1e0303;
-  height: 30px;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
-  padding: 1.3em 1em;
+.side-panel .category-view ul .options .options-box-header .arrhead {
+  transition: 0.3s ease-in-out;
+  margin-right: 1em;
+}
+.side-panel .category-view ul .options .options-box-header .arrhead.active {
+  transform: rotate(180deg);
+}
+.side-panel .category-view ul .options .options-box-header .arrhead.active .options {
+  height: 2em;
+}
+.side-panel .category-view ul .options .option-box-compartment {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.side-panel .category-view ul .options .option-box-compartment .icons {
+  padding: 0 1em;
+}
+.side-panel .category-view ul .options .option-box-compartment.active {
+  display: flex;
+  max-height: 6em;
 }
 .side-panel a {
   display: flex;
@@ -549,20 +585,20 @@ html body {
 }
 
 .display-home-view {
-  height: 50vh;
-}
-.display-home-view .landing-page-section {
+  height: 98vh;
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  margin: 12.5em 0;
+}
+.display-home-view .landing-page-section {
+  margin: auto;
 }
 .display-home-view .landing-page-section h1 {
   color: bisque;
   font-size: 3em;
   font-weight: 1000;
-  margin-bottom: 1.8em;
+  margin: 1em 0;
   text-align: center;
 }
 .display-home-view .landing-page-section p {
@@ -570,6 +606,7 @@ html body {
   color: bisque;
   font-size: 0.8em;
   font-weight: 300;
+  margin: 1.8em 0;
 }
 
 .display-difficulty-selector h2 {

@@ -5,8 +5,8 @@ import Questions from "../components/Questions";
 
 const QuestionView = () => {
     return ( 
-        <div>
-            <IndexHero />
+        <div className="components">
+            {/* <IndexHero /> */}
             <Questions />
         </div>
      );

@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import server from "../../utils"
-
+import axios from "axios";
 
 function SectionLogin () {
     const navigate = useNavigate()
     const [feedback, setFeedback] = useState(null)
+
+
 
     const authLogin = (e: any) => {
         e.preventDefault()
@@ -19,7 +20,7 @@ function SectionLogin () {
         }else{
             token = `Bearer ` + tokenData.refresh
         }
-        
+        console.log(`${server.absolute_url}/sign-in`)
         axios.post(`${server.absolute_url}/sign-in`, {
             username: e.target[0].value,
             password: e.target[1].value
@@ -35,8 +36,9 @@ function SectionLogin () {
             navigate('/home')
         }).catch(err => {
             console.log(err)
-            setFeedback(err.response.data)
+            setFeedback(err.message)
         })
+        
     }
 
     useEffect(() => {

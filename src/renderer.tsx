@@ -30,16 +30,46 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 // import './index.css';
 import './assets/scss/index.css';
-import App from './app';
+// import App from './app';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
+
+import Index from './views/index';
+// import QuizView from './views/QuizView.';
+import AuthView from './views/AuthView';
+import HomeView from './views/HomeView';
+// import DifficultyView from './views/DifficultyView';
+import ClassSelectionView from './views/ClassSelectionView';
+import ErrorPage from "./error-page";
 // console.log('👋 This message is being logged by "renderer.js", included via webpack');
 
-const root = createRoot(document.getElementById("app") as HTMLElement);
+const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomeView />,
+      // errorElement: <ErrorPage />
+    },
+    {
+      path: '/select-class',
+      element: <ClassSelectionView />
+    },
+    {
+      path: '/auth',
+      element: <AuthView />
+    },
+    {
+      path: '/main_window',
+      element: <Index />
+    }
+
+  ]);
+
+
+const root = createRoot(document.getElementById("app"));
 
 root.render(
     <React.StrictMode>
-        {/* <BrowserRouter> */}
-            <App />
-        {/* </BrowserRouter> */}
+        <RouterProvider router={router} />
     </React.StrictMode>
 );

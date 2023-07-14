@@ -6,7 +6,7 @@ import Questions from "../components/Questions";
 
 function Index () {
     return ( 
-        <div>
+        <div className="components">
             <IndexHeader />
             <IndexHero />
             <Questions />

@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 
 import LandingPage from "../components/LandingPage";
-// import '../assets/scss/design-kit/landing-page.scss';
 
 function HomeView () {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     setTimeout(() => navigate('/auth'), 3000)
-    // }, [])
+    useEffect(() => {
+        setTimeout(() => navigate('/auth'), 3000)
+    }, [])
 
     return ( 
         <div className="display-home-view">

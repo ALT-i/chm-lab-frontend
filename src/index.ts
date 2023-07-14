@@ -10,6 +10,7 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+
 // set theme to dark mode by default
 nativeTheme.themeSource = "dark"; // Set to "system" to use OS default theme
 
@@ -19,6 +20,10 @@ const createWindow = (): void => {
     height: 500,
     width: 900,
     webPreferences: {
+      webSecurity: false,
+      sandbox: false,
+      contextIsolation: false,
+      nodeIntegration: false,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });

@@ -23,7 +23,7 @@ const Questions = () => {
     //     window.electronApi.endStoreData()
     // }
 
-    const getToken = () => {
+    function getToken () {
         let token
         const tokenData = JSON.parse(window.localStorage.getItem("tokens"))
         if (!tokenData) {
@@ -35,7 +35,7 @@ const Questions = () => {
         return token
     }
 
-    const getAllCategories = () => {
+    function getAllCategories () {
         fetch(server.absolute_url + '/categories',{
         headers: {
             'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const Questions = () => {
         }).then((res) => res.json())
         .then((replyData) => {
             setCategories(replyData);
-            // console.log(replyData)
+            console.log(replyData)
             // storeData('storeData', 'storeDataComlpete', replyData)
             })
         .catch((err) => {
@@ -55,7 +55,7 @@ const Questions = () => {
 
     }
 
-    const getAllQuestions = () => { 
+    function getAllQuestions () { 
 
         fetch(server.absolute_url + '/questions',{
             headers: {
@@ -66,6 +66,7 @@ const Questions = () => {
         .then((res) => (res.json()))
         .then((data) => {
             setQuestions(data.questions);
+            console.log(data.questions);
         })
         .catch((err) => {
             console.log(err.message);
@@ -91,6 +92,8 @@ const Questions = () => {
     
     useEffect(() => {
 
+        getAllCategories();
+        getAllQuestions();
         // ipcRenderer.send("categoryDataCheck", {});
         // ipcRenderer.on("categoryDataCheckStatus", (res) => {
         //     dataCheck(res)
@@ -124,6 +127,11 @@ const Questions = () => {
             if (err.message.includes("Unauthorized")) 
             navigate('/')
         });
+    }
+
+    const setActivity = (id :number) => {
+        document.getElementById(`arrhead-${id}`).classList.toggle("active")
+        document.getElementById(`compartment-${id}`).classList.toggle("active")
     }
 
     const endSession = () => {
@@ -160,36 +168,54 @@ const Questions = () => {
                 <div className="category-view">
                     <div className="panel-title">
                         <h3>
-                            Categories
+                            Instruments
                         </h3>
                     </div>
                     <ul>
                         {categories.map((category) => (
-                            <li key={category.category_id} onClick={() => getQuestionsById(category.category_id)}>
-                                {category.type}
-                            </li>
-                        ))}   
+                            <div className="options" key={category.category_id} >
+                                <div className="options-box-header" onClick={() => {
+                                    setActivity(category.category_id);
+                                }}
+                                >
+                                    <li>
+                                        {category.type}
+                                    </li>
+                                    <i id={`arrhead-${category.category_id}`} className="fa fa-angle-down arrhead"></i>
+                                </div>
+                                <div id={`compartment-${category.category_id}`} className="option-box-compartment">
+                                    <div className="icons">
+                                        <i className="fa fa-angle-down arrhead"></i>
+                                    </div>
+                                    <div className="icons">
+                                        <i className="fa fa-angle-down arrhead"></i>
+                                    </div>
+                                    <div className="icons">
+                                        <i className="fa fa-angle-down arrhead"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </ul>
                 </div>
             <Link to='/' onClick={endSession} className="log-out">Log out</Link>
             </div>
-            {/* <SectionPanelHandle /> */}
             <div className="display-panel">
                 <div className="question-view">
                     <div className="panel-title">
                         <h3>
-                            Questions
+                            Workspace
                         </h3>
                     </div>
                     <ul>
-                        {questions.map((question) => (
+                        {/* {questions.map((question) => (
                             <li key={question.question_id}>
                                 <div className="question-group">
                                     <p className="question">{question.question}</p>
                                     <p className="answer"><strong>Answer: </strong> {question.answer}</p>
                                 </div>
                             </li>
-                        ))}
+                        ))} */}
                     </ul>
                 </div>
             </div>

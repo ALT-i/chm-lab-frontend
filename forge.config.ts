@@ -19,6 +19,7 @@ const config: ForgeConfig = {
     new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
       mainConfig,
+      devContentSecurityPolicy: "connect-src 'self' http://localhost:8000/ 'unsafe-eval'",
       renderer: {
         config: rendererConfig,
         entryPoints: [
@@ -29,7 +30,7 @@ const config: ForgeConfig = {
             preload: {
               js: './src/preload.ts',
             },
-          },
+          }
         ],
       },
     }),

@@ -5,10 +5,9 @@ import IndexHeader from "../components/IndexHeader";
 
 function AuthView () {
     return (
-        <div>
-            {/* <IndexHeader />
-            <Authentication /> */}
-            <p>Hello</p>
+        <div className="components">
+            <IndexHeader />
+            <Authentication />
         </div>
      );
 }

@@ -5,7 +5,7 @@ import ClassSelector from "../components/ClassSelector";
 
 function ClassSelectionView () {
     return ( 
-        <div>
+        <div className="components">
             <ClassSelector />
         </div>
      );
