@@ -84,7 +84,9 @@ function SectionMainHero () {
             <div className="difficulty-selection">
                 <ul>
                     <li>
-                        Go to class selection
+                        <a href="/main_window">
+                            Go to class selection
+                        </a>
                     </li>
                     <li>
                         About this class

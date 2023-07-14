@@ -9,9 +9,9 @@ const ClassSelector = () => {
 
     const getClassDetails = (e: any) => {
         console.log(e.target.id)
-        window.localStorage.setItem("oldlevels", JSON.stringify([e.target.id]))
+        window.localStorage.setItem("selected-class", JSON.stringify([e.target.id]))
 
-        navigate('/home')
+        navigate(`/home/${e.target.id}`)
     }
     
     return ( 
@@ -20,8 +20,27 @@ const ClassSelector = () => {
                 <h1>Pick a class</h1>
             </div>
             <div className="class-selection-grid">
-                <DisplayClasses getClassDetails={getClassDetails} />
+                {/* <DisplayClasses getClassDetails={getClassDetails} /> */}
+                <ul>
+                    <li id="class-one" onClick={e => getClassDetails(e)}>
+                        Oxidation
+                    </li>
+                    <li id="class-two" onClick={e => getClassDetails(e)}>
+                        Titration
+                    </li>
+                    <li id="class-three" onClick={e => getClassDetails(e)}>
+                        Redux Reactions
+                    </li>
+                    <li id="class-three" onClick={e => getClassDetails(e)}>
+                        Separation Techniques
+                    </li>
+                    <li id="class-four" onClick={e => getClassDetails(e)}>
+                        Oxidation
+                    </li>
+                    
+                </ul>
             </div>
+
         </div>
      );
 }

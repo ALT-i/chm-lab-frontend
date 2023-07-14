@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       // errorElement: <ErrorPage />
     },
     {
-      path: '/select-class',
+      path: '/main_window',
       element: <ClassSelectionView />
     },
     {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       element: <AuthView />
     },
     {
-      path: '/main_window',
+      path: '/home/:class_id',
       element: <Index />
     }
 

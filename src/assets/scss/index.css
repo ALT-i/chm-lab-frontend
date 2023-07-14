@@ -54,6 +54,10 @@ html body {
 .main-hero .difficulty-selection ul li:active {
   transform: translateY(2px);
 }
+.main-hero .difficulty-selection ul li a {
+  text-decoration: none;
+  color: inherit;
+}
 .main-hero .difficulty-selection ul .active {
   background: rgba(193, 199, 152, 0.859);
   color: #222222;
