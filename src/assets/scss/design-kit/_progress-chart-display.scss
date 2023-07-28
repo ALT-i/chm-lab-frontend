@@ -1,0 +1,45 @@
+.progress-chart-display{
+    width: 90%;
+    height: 13em;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 1px 1px 6px #3b3b3b39;
+    padding: 20px 10px;
+    margin: 1em;
+    -webkit-user-select: none;
+
+    .chart-display-box{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+
+        .display-box-header{
+            padding: 0 0.3em;
+            margin: 0.5em;
+
+            h2{
+                font-size: 20px;
+                font-style: 200;
+                color: #013112;
+                margin: 0.1em 0;
+            }
+        }
+
+        .display-box-window{
+            width: 95%;
+            height: 10em;
+            margin: 0.5em auto;
+            padding: 0 0.8em;
+            border-radius: 9px;
+            // border: 1px solid #4141412a;
+            // box-shadow: 1px 2px 12px #3e523e63 inset;
+
+            h2{
+                font-size: 14px;
+                font-weight: 200;  
+            }
+        }
+    }
+
+}

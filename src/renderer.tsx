@@ -47,19 +47,27 @@ import ErrorPage from "./error-page";
 const router = createBrowserRouter([
     {
       path: "/",
+      // path: "/main_window",
       element: <HomeView />,
-      // errorElement: <ErrorPage />
     },
     {
-      path: '/main_window',
+      path: '/select-class',
+      // path: '/main_window',
       element: <ClassSelectionView />
     },
     {
-      path: '/auth',
+      // path: '/auth',
+      path: '/main_window',
       element: <AuthView />
     },
     {
+      path: '/home',
+      // path: "/main_window",
+      element: <Index />
+    },
+    {
       path: '/home/:class_id',
+      // path: "/main_window",
       element: <Index />
     }
 

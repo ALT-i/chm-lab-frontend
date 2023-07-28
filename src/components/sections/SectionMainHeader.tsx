@@ -6,7 +6,7 @@ function SectionMainHeader () {
         <div className="main-header">
             <h1>
                 <a href='/'>    
-                    vLab
+                    CHM Virtual Lab
                 </a>  
             </h1>
             {/* <button onClick = {() => {

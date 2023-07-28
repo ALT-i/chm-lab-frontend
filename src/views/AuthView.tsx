@@ -5,7 +5,7 @@ import IndexHeader from "../components/IndexHeader";
 
 function AuthView () {
     return (
-        <div className="components">
+        <div className="auth-component">
             <IndexHeader />
             <Authentication />
         </div>

@@ -17,8 +17,11 @@ nativeTheme.themeSource = "dark"; // Set to "system" to use OS default theme
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 500,
-    width: 900,
+    height: 600,
+    width: 1200,
+    minWidth: 900,
+    minHeight: 600,
+    frame: false,
     webPreferences: {
       webSecurity: false,
       sandbox: false,

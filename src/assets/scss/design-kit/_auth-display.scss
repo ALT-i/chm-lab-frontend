@@ -1,11 +1,19 @@
+.auth-component{
+    height: 100vh;
+    overflow: scroll;
+
+    .auth-section{
+        margin: auto
+    }
+}
+
 .authentication{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    padding: 1.6em 0;
-    height: 70vh;
+    padding: 0.6em 0;
+    height: 100%;
 
     .alert{
         background: rgb(224, 0, 0);
@@ -21,7 +29,7 @@
         text-align: center;
     }
     .section-login{
-        margin-top: 6em;
+        max-height: 50%;
         form{
             div{
                 margin-top: 1.2em;
@@ -29,8 +37,8 @@
                 label{
                     display: block;
                     padding: 0.5em 0;
-                    color: bisque;
-                    font-size: 0.8em;
+                    color: rgba(2, 29, 1, 0.859);
+                    font-size: 1em;
                     font-weight: 600;
                     letter-spacing: 1px;
                     text-align: center;
@@ -38,8 +46,8 @@
                 
                 input{
                     width: 15em;
-                    border-radius: 1.2em;
-                    border: 1px solid rgba(227, 230, 208, 0.951); 
+                    border-radius: 0.8em;
+                    border: 2px solid rgba(2, 29, 1, 0.641); 
                     background: none;
                     padding-top: 1em;
                     font-size: 1em;
@@ -48,14 +56,13 @@
                     height: 1.8em;
                     transition: 0.3s ease-in-out;
                     text-decoration: none;
-                    color: rgba(227, 230, 208, 0.951);
+                    color: rgba(2, 29, 1, 0.859);
                     display: block;
                     margin: 0.5em auto;
-                    box-shadow: 1px 2px 18px #3030303d;
+                    box-shadow: 1px 2px 4px rgba(2, 29, 1, 0.213);
                     
                     &:active{
-                        border-color: none;
-                        border: 3px solid rgba(227, 230, 208, 0.951); 
+                        border: 2px solid rgba(2, 29, 1, 0.641); 
                         background: none;
                     }
                 }
@@ -71,7 +78,7 @@
                 button{
                     width: 50%;
                     border-radius: 2em;
-                    border: 3px solid rgba(227, 230, 208, 0.951); 
+                    border: 3px solid rgb(2, 29, 1); 
                     // background: none;
                     padding-top: 1em;
                     font-size: 1em;
@@ -85,12 +92,16 @@
                     // color: rgba(227, 230, 208, 0.951);
                     display: block;
                     margin: 0.5em auto;
-                    box-shadow: 1px 2px 18px #3030303d;
-                    background: rgba(227, 230, 208, 0.951);
-                    color: #240116;
-                        
+                    // box-shadow: 1px 2px 18px #3030303d;
+                    background: rgb(2, 29, 1);
+                    color: #ededed;
+
+                    
                     &:hover{
                         width: 11em;
+                        background: rgb(2, 29, 1);
+                        color: #ededed;
+
                     }
                          
                 }
@@ -100,7 +111,8 @@
     }
 
     .section-sign-up{
-        margin-top: 8em;
+        max-height: 50%;
+
         form{
             div{
                 margin-top: 1.2em;
@@ -108,8 +120,8 @@
                 label{
                     display: block;
                     padding: 0.5em 0;
-                    color: bisque;
-                    font-size: 0.8em;
+                    color: rgba(2, 29, 1, 0.859);
+                    font-size: 1em;
                     font-weight: 600;
                     letter-spacing: 1px;
                     text-align: center;
@@ -117,8 +129,8 @@
                 
                 input{
                     width: 15em;
-                    border-radius: 1.2em;
-                    border: 1px solid rgba(227, 230, 208, 0.951); 
+                    border-radius: 0.8em;
+                    border: 2px solid rgba(2, 29, 1, 0.641); 
                     background: none;
                     padding-top: 1em;
                     font-size: 1em;
@@ -127,10 +139,10 @@
                     height: 1.8em;
                     transition: 0.3s ease-in-out;
                     text-decoration: none;
-                    color: rgba(227, 230, 208, 0.951);
+                    color: rgba(2, 29, 1, 0.859);
                     display: block;
                     margin: 0.5em auto;
-                    box-shadow: 1px 2px 18px #3030303d;
+                    box-shadow: 1px 2px 4px rgba(2, 29, 1, 0.213);
                     
                     &:active{
                         border-color: none;
@@ -150,7 +162,7 @@
                 button{
                     width: 50%;
                     border-radius: 2em;
-                    border: 3px solid rgba(227, 230, 208, 0.951); 
+                    border: 3px solid rgb(2, 29, 1); 
                     // background: none;
                     padding-top: 1em;
                     font-size: 1em;
@@ -164,9 +176,9 @@
                     // color: rgba(227, 230, 208, 0.951);
                     display: block;
                     margin: 0.5em auto;
-                    box-shadow: 1px 2px 18px #3030303d;
-                    background: rgba(227, 230, 208, 0.951);
-                    color: #240116;
+                    // box-shadow: 1px 2px 18px #3030303d;
+                    background: rgb(2, 29, 1);
+                    color: #ededed;
                         
                     &:hover{
                         width: 11em;
@@ -180,11 +192,11 @@
 
     .foot-note{
         p{
-            font-size: 0.8em;
+            font-size: 1em;
             font-weight: 600;
             cursor: pointer;
             text-align: center;
-            color: bisque;
+            color: rgb(2, 29, 1);
             letter-spacing: 1px;
             padding: 0.4em;
             text-decoration: none;
