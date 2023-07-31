@@ -1,37 +1,47 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 import server from "../../utils"
-import axios from "axios";
 
 function SectionLogin () {
     const navigate = useNavigate()
     const [feedback, setFeedback] = useState(null)
 
+    type authResData = {
+        user_id? : string
+    }
 
+
+    const getUserData = (id: string) => {
+        axios.get(`${server.absolute_url}/${server.user}/${id}/`)
+        .then((res) => {
+            window.localStorage.setItem("user_data", JSON.stringify(res.data))
+            setFeedback(null)
+            navigate('/home')
+        }).catch(err => {
+            console.log(err)
+            setFeedback(err.message)
+        })
+    }
 
     const authLogin = (e: any) => {
         e.preventDefault()
-        let token
-        const tokenData = JSON.parse(window.localStorage.getItem("tokens"))
-        if (!tokenData) {
-            token = ""
-        }else{
-            token = `Bearer ` + tokenData.refresh
-        }
-        console.log(`${server.absolute_url}/sign-in`)
-        axios.post(`${server.absolute_url}/sign-in`, {
-            username: e.target[0].value,
+
+        // console.log(`${server.absolute_url}/${server.user_auth}/login`) ///api/v1/users/
+        axios.post(`${server.absolute_url}/${server.auth_signin}`, {
+            email: e.target[0].value,
             password: e.target[1].value
         },
             {headers : {
                 'Content-Type': 'application/json',
-                'Authorization': token
-        }
+                }
         }).then((res) => {
-            console.log(res.data.user.tokens)
-            window.localStorage.setItem("tokens", JSON.stringify(res.data.user.tokens))
+            window.localStorage.setItem("auth_tokens", JSON.stringify(res.data))
+            const userInfo: authResData  = ( jwt_decode(res.data.access))
+            getUserData(userInfo.user_id)
             setFeedback(null)
             navigate('/home')
         }).catch(err => {
@@ -51,8 +61,8 @@ function SectionLogin () {
             <br/>
             <form action="" onSubmit={authLogin} id="login" className="login">
                 <div>
-                    <label htmlFor="uname">Username:</label>
-                    <input id="uname" type="text" name="username"/>
+                    <label htmlFor="email">Email:</label>
+                    <input id="email" type="text" name="username"/>
                 </div>
                 <div>
                     <label htmlFor="pwd">Password:</label>

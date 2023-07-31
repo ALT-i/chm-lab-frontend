@@ -2,70 +2,50 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import server from "../utils";
 import DisplayClasses from "./sections/DisplayClasses";
 
 const ClassSelector = () => {
+
+    const [compleedClasses, setCompletedClasses] = useState(null);
 
     const navigate = useNavigate()
 
     const getClassDetails = (e: any) => {
         console.log(e.target.id)
-        window.localStorage.setItem("selected-class", JSON.stringify([e.target.id]))
+        window.localStorage.setItem("completed-classes", JSON.stringify([e.target.id]))
 
         navigate(`/home/${e.target.id}`)
     }
 
     // useEffect(() => {
-    //     const stagedLevels = JSON.parse(window.localStorage.getItem("levels"))
-    //     if(stagedLevels) {
-    //         setLevels(stagedLevels)
-    //         let token
-    //         const tokenData = JSON.parse(window.localStorage.getItem("tokens"))
-    //         if (!tokenData) {
-    //             navigate('/auth')
-    //         }else{
-    //             token = `Bearer ` + tokenData.access
-    //         }
+    //     const hashedClasses = JSON.parse(window.localStorage.getItem("completed-classes"))
+    //     const user_id = JSON.parse(window.localStorage.getItem("userid"))
+    //     if(hashedClasses) {
+    //          setCompletedClasses(hashedClasses);
+    //     }{
+//         let token
+//         const tokenData = JSON.parse(window.localStorage.getItem("tokens"))
+//         if (!tokenData) {
+//             navigate('/auth')
+//         }else{
+//             token = `Bearer ` + tokenData.access
+//         }
 
-    //         axios.get(`${server.absolute_url}/levels`, {
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 "authorization": token
-    //             }
-    //         }).then((res) => {
-    //             setLevels(res.data)
-    //             window.localStorage.setItem("levels", JSON.stringify(res.data))
-    
-    //         }).catch(err => {
-    //             // if(err.message === "Network Error") setLevels(oldLevels);
-    //             console.log(err)
+        // axios.get(`${server.absolute_url}/${server.user_auth}/${user_id}`, {         //Get list of completed classes from server
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "authorization": token
+//             }
+//         }).then((res) => {
+//             setCompletedClasses(res.data.completed_class)  //Get completed class list from response
+//             window.localStorage.setItem("levels", JSON.stringify(res.data.completed_class))
 
-    //         })
-    //     }
-    //     else{
-    //         let token
-    //         const tokenData = JSON.parse(window.localStorage.getItem("tokens"))
-    //         if (!tokenData) {
-    //             navigate('/auth')
-    //         }else{
-    //             token = `Bearer ` + tokenData.access
-    //         }
+//         }).catch(err => {
+//             // if(err.message === "Network Error") setLevels(oldLevels);
+//             // console.log(err)
 
-    //         axios.get(`${server.absolute_url}/levels`, {
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 "authorization": token
-    //             }
-    //         }).then((res) => {
-    //             setLevels(res.data)
-    //             window.localStorage.setItem("levels", JSON.stringify(res.data))
-    
-    //         }).catch(err => {
-    //             // if(err.message === "Network Error") setLevels(oldLevels);
-    //             // console.log(err)
-
-    //         })
-    //     }
+//         })
 
     // },[])
     

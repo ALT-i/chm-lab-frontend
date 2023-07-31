@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function SectionSidePanel () {
-    
+import server from "../../utils";
+
+function SectionSidePanel (props: any) {
+
     const navigate = useNavigate();
+    const userData = JSON.parse(window.localStorage.getItem("user_data"))
+    const user_fname = userData.first_name;
+    // const user_dp = JSON.parse(window.localStorage.getItem("dp"))  //Maybe get dp from local machine
 
+
+    const substances = props.substances;
+    const apparatus = props.apparatus;
+    const classInstructor = props.classInstructor;
+
+    
+
+    function goToLogin () {
+        window.localStorage.removeItem("user_data")
+        window.localStorage.removeItem("auth_tokens")
+        navigate(`/auth`)
+    }
 
     function goToClassList () {
         navigate(`/select-class`)
     }
+
     return (
         <section className="left-side-panel">
             <div className="panel">
                 <div className="basic-profile">
                     <div className="user-name">
-                        <p>Chioma</p>
+                        <p>{user_fname}</p>
                     </div>
                     <div className="user-picture">
                         <div className="picture"></div>
@@ -28,6 +47,19 @@ function SectionSidePanel () {
                         </span>
                     </div>
                 </div>
+                {/* <div className="workspace-workbench-compartment">
+                    <div className="workbench">
+                        <div className="instructor">
+                            <p>{classInstructor}</p>
+                        </div>
+                        <div className="workbench-apparatus">
+                            <div className="apparatus-section">{apparatus}</div>
+                        </div>
+                        <div className="workbench-substances">
+                            <div className="substance-section">{substances}</div>
+                        </div>
+                    </div>
+                </div> */}
                 <div className="profile-options">
                     <div className="profile-option">
                         <div className="option" onClick={goToClassList}>
@@ -63,7 +95,7 @@ function SectionSidePanel () {
                     </div>
                     <div className="profile-option">
                         <div className="option">
-                            <p>Log out</p>
+                            <p onClick={goToLogin}>Log out</p>
                             <span className="material-symbols-outlined logout">
                                 logout
                             </span>
