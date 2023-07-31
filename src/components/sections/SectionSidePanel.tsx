@@ -94,8 +94,8 @@ function SectionSidePanel (props: any) {
                         </div>
                     </div>
                     <div className="profile-option">
-                        <div className="option">
-                            <p onClick={goToLogin}>Log out</p>
+                        <div className="option" onClick={goToLogin}>
+                            <p>Log out</p>
                             <span className="material-symbols-outlined logout">
                                 logout
                             </span>
