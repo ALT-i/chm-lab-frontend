@@ -8,6 +8,7 @@ function SectionSidePanel (props: any) {
 
     const navigate = useNavigate();
     const userData = JSON.parse(window.localStorage.getItem("user_data"))
+    console.log(userData);
     const user_fname = userData.first_name;
     // const user_dp = JSON.parse(window.localStorage.getItem("dp"))  //Maybe get dp from local machine
 
@@ -25,7 +26,7 @@ function SectionSidePanel (props: any) {
     }
 
     function goToClassList () {
-        navigate(`/select-class`)
+        setTimeout(() => navigate(`/select-class`), 200);
     }
 
     return (

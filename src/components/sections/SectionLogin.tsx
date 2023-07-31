@@ -15,12 +15,10 @@ function SectionLogin () {
     }
 
 
-    const getUserData = (id: string) => {
+    async function getUserData (id: string) {
         axios.get(`${server.absolute_url}/${server.user}/${id}/`)
         .then((res) => {
             window.localStorage.setItem("user_data", JSON.stringify(res.data))
-            setFeedback(null)
-            navigate('/home')
         }).catch(err => {
             console.log(err)
             setFeedback(err.message)
@@ -43,7 +41,7 @@ function SectionLogin () {
             const userInfo: authResData  = ( jwt_decode(res.data.access))
             getUserData(userInfo.user_id)
             setFeedback(null)
-            navigate('/home')
+            setTimeout(() => navigate('/home'), 1000);
         }).catch(err => {
             console.log(err)
             setFeedback(err.message)

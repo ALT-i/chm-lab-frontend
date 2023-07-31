@@ -22,34 +22,28 @@ function IndexPage () {
     const [classParameters, setClassParameters] = useState(null);
 
 
+    //Fetch class details from local machine with node process and render with IPC signals
 
     const getWorkbench = () => {
         if(class_id) {
             setChosenClass(class_id);
-            //Fetch class details from local machine with node process and render with IPC signals
+            console.log(class_id)
 
-            let token
-            const tokenData = JSON.parse(window.localStorage.getItem("tokens"))
-            if (!tokenData) {
-                navigate('/auth');
-            }else{
-                token = `Bearer ` + tokenData.access
-            }
-
-            axios.get(`${server.absolute_url}/${server.workspace}`, {
+            axios.get(`${server.absolute_url}/${server.workspace}/${class_id}/`, {
                     headers: {
                         "Content-Type": "application/json",
-                        "authorization": token
+                        // "authorization": token
                     }
                 }).then((res) => {
+                    console.log(res)
                     //Save following class details to local machine with IPC signals
 
-                    setSubstances(res.data.results.substances);
-                    setApparatus(res.data.results.apparatus);
-                    setClassInstruction(res.data.results.instruction);
-                    setClassInstructor(res.data.results.instructor);
-                    setClassParameters(res.data.results.parameters);
-                    setClassTitle(res.data.results.title);
+                    setSubstances(res.data.substances);
+                    setApparatus(res.data.apparatus);
+                    setClassInstruction(res.data.instructions);
+                    setClassInstructor(res.data.instructor);
+                    setClassParameters(res.data.parameters);
+                    setClassTitle(res.data.title);
 
     
                 }).catch(err => {
@@ -76,10 +70,18 @@ function IndexPage () {
                     chosenClass?  
                     <div className="workspace-lesson">
                         <div className="lesson section">
-                            <div className="lesson-title">{classTitle}</div>
-                            <div className="lesson-instructor">{classInstructor}</div>
-                            <div className="lesson-instruction">{classInstruction}</div>
-                            <div className="lesson-parameters">{classParameters}</div>
+                            <div className="lesson-title">
+                                <p>{classTitle}</p>
+                            </div>
+                            <div className="lesson-instructor">
+                                <p>{classInstructor}</p>
+                            </div>
+                            <div className="lesson-instruction">
+                                <p>{classInstruction}</p>
+                            </div>
+                            <div className="lesson-parameters">
+                                <p>{classParameters}</p>
+                            </div>
                         </div> 
                     </div> : <ProgressChartDisplay/>
                 }
