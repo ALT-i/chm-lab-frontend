@@ -390,6 +390,59 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
 .left-side-panel .panel .continue-class .continue-button:hover {
   background: #fff;
 }
+.left-side-panel .panel .work {
+  height: 100%;
+  overflow: scroll;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench {
+  margin: 0.3em auto;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .instructor {
+  overflow-wrap: normal;
+  padding: 0 10px;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .instructor p {
+  font-size: 15px;
+  font-weight: 600;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus {
+  margin: 20px 0 0 0;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .aparatus-options-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-content: center;
+  transition: 0.3s ease-in-out;
+  padding: 5px 10px;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .aparatus-options-header p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0;
+  padding-left: 10px;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .aparatus-options-header i {
+  font-size: 16px;
+  font-weight: 200;
+  margin: auto 0;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .aparatus-options-header:hover {
+  background: rgba(17, 84, 37, 0.2588235294);
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .apparatus-options ul.apparatus-list {
+  margin: 0;
+  padding: 1px 0;
+  display: grid;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .apparatus-options ul.apparatus-list li {
+  list-style: none;
+  transition: 0.3s ease-in-out;
+  padding: 14px 10px;
+}
+.left-side-panel .panel .work .workspace-workbench-compartment .workbench .workbench-apparatus .apparatus-section .apparatus-options ul.apparatus-list li:hover {
+  background: rgba(17, 84, 37, 0.2588235294);
+}
 .left-side-panel .panel .profile-options {
   margin: 4em auto 0 auto;
   transition: 0.3s ease-in-out;

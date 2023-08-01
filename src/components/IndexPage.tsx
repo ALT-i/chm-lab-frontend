@@ -15,7 +15,7 @@ function IndexPage () {
     const { class_id } = useParams();
     const [chosenClass, setChosenClass] = useState(null);
     const [substances, setSubstances] = useState(null);
-    const [apparatus, setApparatus] = useState(null);
+    const [tools, setTools] = useState(null);
     const [classTitle, setClassTitle] = useState(null);
     const [classInstruction, setClassInstruction] = useState(null);
     const [classInstructor, setClassInstructor] = useState(null);
@@ -23,6 +23,26 @@ function IndexPage () {
 
 
     //Fetch class details from local machine with node process and render with IPC signals
+
+    function getSubstance (substances: any) {
+        const substanceNames: any = []; 
+        for (const sub of substances){
+            axios.get(`${server.absolute_url}/${server.workbench}/apparatus/${sub}/`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    // "authorization": token
+                }
+            }).then((res) => {
+                console.log(res.data)
+                substanceNames.push[res.data.name]
+            }).catch(err => {
+                if(err.message === "Network Error") {
+                    console.log(err)
+                }
+            })
+        }
+        console.log(substanceNames)
+    }
 
     const getWorkbench = () => {
         if(class_id) {
@@ -38,14 +58,16 @@ function IndexPage () {
                     console.log(res)
                     //Save following class details to local machine with IPC signals
 
+                    // setSubstances(res.data.substances);
+                    // setApparatus(res.data.apparatus);
+                    // getSubstance(res.data.substances);
+                    setTools(res.data.tools);
                     setSubstances(res.data.substances);
-                    setApparatus(res.data.apparatus);
                     setClassInstruction(res.data.instructions);
                     setClassInstructor(res.data.instructor);
                     setClassParameters(res.data.parameters);
                     setClassTitle(res.data.title);
 
-    
                 }).catch(err => {
                     if(err.message === "Network Error") {
                         console.log(err)
@@ -63,7 +85,7 @@ function IndexPage () {
         <div className="index-page">
             {
                 chosenClass?
-                <SectionSidePanel substances={substances} apparatus={apparatus} classInstructor={classInstructor} /> : <SectionSidePanel />
+                <SectionSidePanel substances={substances} tools={tools} classInstructor={classInstructor} /> : <SectionSidePanel />
             }
             <div className="index-page-main">
                 {
