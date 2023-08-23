@@ -30,6 +30,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 // import './index.css';
 import './assets/scss/index.css';
+import './assets/img/noun_logo.png';
+import './assets/img/acetel_logo.png'
 // import App from './app';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
