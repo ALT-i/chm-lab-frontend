@@ -1,0 +1,150 @@
+html{
+    body{
+        background-image: linear-gradient(to bottom, #f9f9f9 2%, #f9f9f9 20%, #f9f9f9 80%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        
+        header{
+            .header-section{
+                background: #ececec;
+                height: 28px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                // justify-content: space-between;
+                overflow: hidden;
+                -webkit-user-select: none;
+
+                .topbar-logo{
+                    flex: 85%;
+                    margin-left: 10px;
+                    align-self: center;
+                    justify-self: center;
+                    -webkit-app-region: drag;
+
+                    .logo-compartment{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+
+                        .logo{
+                            width: 10px;
+                            height: 9px;
+                            // background-image: url(../../img/noun_logo.png);
+                            background: #02380a;
+                            margin-right: 5px;
+                            border-radius: 50%;
+                        }
+    
+                        .logo-caption{
+                            font-size: 13px;
+                            font-weight: 200;
+                            // font-style: ;
+                        }
+
+                    }
+
+                }
+                
+                .topbar-icons{
+                    flex: 15%;
+                    align-self: center;
+                    
+                    .icon-flex{
+                        display: flex;
+                        flex-direction: row; 
+                        justify-content: flex-end;
+                        align-content: center;
+                        
+                        .icon-flex-minimize{
+                            // cursor: pointer;
+                            z-index: 99;
+                            &:hover{
+                                background: #c9c9c964;
+                            }
+
+                            span{
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-content: center;
+                                height: 100%;
+                                padding: 3px 14px;
+                                margin: auto;
+                                font-size: 20px;
+                                font-weight: 300;
+                                transition: 0.3s ease-in-out;
+                            }
+
+                        }
+                        
+                        .icon-flex-resize{
+                            // cursor: pointer;
+    
+
+                            span{
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-content: center;
+                                height: 100%;
+                                padding: 5px 14px;
+                                font-size: 15px;
+                                font-weight: 300;
+                                margin: auto;
+                                transition: 0.3s ease-in-out;
+                            }
+                            
+                            &:hover{
+                                background: #c9c9c964;
+                            }
+                        }
+                        
+                        .icon-flex-close{
+                            // cursor: pointer;
+
+                            span{
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-content: center;
+                                // height: 100%;
+                                padding: 2px 14px;
+                                font-size: 20px;
+                                font-weight: 300;
+                            }
+                            
+                            &:hover{
+                                background: #bb0202;
+
+                                span{
+                                    color: #ededed;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main{
+
+        }
+    }
+}
+
+.components{
+    // height: 98vh;
+    // margin: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+}

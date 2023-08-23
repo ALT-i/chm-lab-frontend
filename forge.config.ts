@@ -19,17 +19,18 @@ const config: ForgeConfig = {
     new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
       mainConfig,
+      devContentSecurityPolicy: "",
       renderer: {
         config: rendererConfig,
         entryPoints: [
           {
-            html: './src/index.html',
+            html: './public/index.html',
             js: './src/renderer.tsx',
             name: 'main_window',
             preload: {
               js: './src/preload.ts',
             },
-          },
+          }
         ],
       },
     }),
