@@ -12,7 +12,7 @@ import ProgressChartDisplay from "./sections/ProgressChartDisplay";
 function IndexPage () {
 
     const navigate = useNavigate();
-    const { class_id } = useParams();
+    const class_id  = 1;
     const [chosenClass, setChosenClass] = useState(null);
     const [substances, setSubstances] = useState(null);
     const [tools, setTools] = useState(null);
@@ -21,6 +21,8 @@ function IndexPage () {
     const [classInstructor, setClassInstructor] = useState(null);
     const [classParameters, setClassParameters] = useState(null);
 
+    
+    
 
     //Fetch class details from local machine with node process and render with IPC signals
 
@@ -49,7 +51,7 @@ function IndexPage () {
             setChosenClass(class_id);
             console.log(class_id)
 
-            axios.get(`${server.absolute_url}/${server.workspace}/${class_id}/`, {
+            axios.get(`${server.absolute_url}/${server.workspace}/1/`, {
                     headers: {
                         "Content-Type": "application/json",
                         // "authorization": token
@@ -79,6 +81,11 @@ function IndexPage () {
 
     useEffect(() => {
         getWorkbench();
+        document.addEventListener("mousemove", function(e){
+            const ele = document.getElementById('workspaceLesson');
+            const distance = ele.offsetLeft + ele.offsetWidth - e.pageX;
+            distance < 9 && distance > -0.1 ? ele.classList.add('more-width') : ele.classList.remove('more-width');
+        });
     }, [])
 
     return (
@@ -90,19 +97,27 @@ function IndexPage () {
             <div className="index-page-main">
                 {
                     chosenClass?  
-                    <div className="workspace-lesson">
-                        <div className="lesson section">
+                    <div id="workspaceLesson" className="workspace-lesson">
+                        <div className="lesson-section">
                             <div className="lesson-title">
-                                <p>{classTitle}</p>
+                                <h3>{classTitle}</h3>
+                                <p>Parameters: {classParameters}</p>
                             </div>
                             <div className="lesson-instructor">
-                                <p>{classInstructor}</p>
+                                <div className="title-box">
+                                    <p className="title">Instructor</p>
+                                </div>
+                                <div className="name">
+                                    <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+                                    <h3>Dr. Chan Isaac</h3>
+                                </div>
                             </div>
                             <div className="lesson-instruction">
+                                <p className="title">Instructions</p>
                                 <p>{classInstruction}</p>
                             </div>
-                            <div className="lesson-parameters">
-                                <p>{classParameters}</p>
+                            <div className="animation-box">
+                                <p>Animations happen here</p>
                             </div>
                         </div> 
                     </div> : <ProgressChartDisplay/>

@@ -135,7 +135,11 @@
                 border-radius: 50%;
                 width: 17px;
                 height: 47px;
-                background:  #fff;
+                // background:  #fff;
+                i{
+                    font-size: 3em;
+                    color: #fff;
+                }
             }
         }
 
@@ -183,9 +187,70 @@
             }
 
         }
-        .work{
-            height: 100%;
-            overflow: scroll;
+        #element.work.more-width{
+            max-height: 86%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            
+            &::-webkit-scrollbar-button{
+                color: #e3e3e3c8;
+                background: #001f00;
+                height: 0px;
+                
+            }
+            
+            &::-webkit-scrollbar-thumb{
+                border-radius: 15px;
+                background: #989898;               
+                visibility: hidden;
+                border: none;
+            }
+            
+            &::-webkit-scrollbar{
+                width: 9px;
+                background: transparent;
+            }
+        
+     
+            &:hover, &:focus{
+                &::-webkit-scrollbar-thumb{
+                    border: 0;
+                    visibility: visible;
+                    transition: visibility 0s 0.2s;
+                }
+            }
+       }
+        #element.work{
+            max-height: 86%;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar-button{
+                color: #e3e3e3c8;
+                background: #001f00;
+                height: 0px;
+                
+            }
+            
+            &::-webkit-scrollbar-thumb{
+                border: 3.5px solid #e0f4df;
+                border-radius: 15px;
+                background: #989898;               
+                visibility: hidden;
+            }
+            
+            &::-webkit-scrollbar {
+                width: 9px;
+                background: transparent;
+            }
+        
+
+            &:hover, &:focus{
+                &::-webkit-scrollbar-thumb{
+                    visibility: visible;
+                    transition: visibility 0s 0.2s;
+                }
+            }
 
             .workspace-workbench-compartment{
                 .workbench{
@@ -205,7 +270,7 @@
                         margin: 20px 0 0 0;
                         .apparatus-section{
                             
-                            .aparatus-options-header{
+                            .apparatus-options-header{
                                 display: flex;
                                 flex-direction: row-reverse;
                                 justify-content: flex-end;
@@ -226,9 +291,9 @@
                                     margin: auto 0;
                                 }
     
-                                &:hover{
-                                    background: #11542542;
-                                }
+                                // &:hover{
+                                //     background: #11542542;
+                                // }
                             }
                             
                             .apparatus-options{
@@ -237,13 +302,79 @@
                                     margin: 0;
                                     padding: 1px 0;
                                     display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-column-gap: auto;
+                                    grid-row-gap: auto;
+
+                                    
 
 
     
                                     li{
                                         list-style: none;
                                         transition: 0.3s ease-in-out;
-                                        padding: 14px 10px;;
+                                        padding: 14px 10px;
+                                        margin: 0 0.1em;
+    
+                                        &:hover{
+                                            background: #11542542;
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+    
+                    .workbench-substances{
+                        margin: 20px 0 0 0;
+                        .substance-section{
+                            
+                            .substance-options-header{
+                                display: flex;
+                                flex-direction: row-reverse;
+                                justify-content: flex-end;
+                                align-content: center;
+                                transition: 0.3s ease-in-out;
+                                padding: 5px 10px;
+                                
+                                p{
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    margin: 5px 0;
+                                    padding-left: 10px;
+                                }
+    
+                                i{
+                                    font-size: 16px;
+                                    font-weight: 200;
+                                    margin: auto 0;
+                                }
+    
+                                // &:hover{
+                                //     background: #11542542;
+                                // }
+                            }
+                            
+                            .substance-options{
+                                // border-bottom: 3px dotted #013112;
+                                ul.substance-list{
+                                    margin: 0;
+                                    padding: 1px 0;
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-column-gap: auto;
+                                    grid-row-gap: auto;
+
+                                    
+
+
+    
+                                    li{
+                                        list-style: none;
+                                        transition: 0.3s ease-in-out;
+                                        padding: 14px 10px;
+                                        margin: 0 0.1em;
     
                                         &:hover{
                                             background: #11542542;
