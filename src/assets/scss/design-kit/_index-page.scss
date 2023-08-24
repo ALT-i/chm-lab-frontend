@@ -1,10 +1,242 @@
 .index-page{
     .index-page-main{
-        // margin: 0.5em 1em;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-content: center;
+        
+        #workspaceLesson.workspace-lesson{
+            padding: 2em 0.3em;
+            max-height: 84.5vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            
+            &::-webkit-scrollbar-button{
+                color: #e3e3e3c8;
+                background: #001f00;
+                height: 0px;
+                
+            }
+            
+            &::-webkit-scrollbar-thumb{
+                border: 3.5px solid #fff;
+                border-radius: 15px;
+                background: #989898;               
+                visibility: hidden;
+            }
+            
+            &::-webkit-scrollbar {
+                width: 9px;
+                background: transparent;
+            }
+
+            &:hover, &:focus{
+                &::-webkit-scrollbar-thumb{
+                    visibility: visible;
+                }
+            }
+            .lesson-section{
+                .lesson-title{
+                    padding: 1em 1.5em;
+                    box-shadow: 1px 1px 6px rgba(59, 59, 59, 0.326);
+                    border-radius: 1.3em;
+                    margin: 0.5em;
+                    
+                    p{
+                        font-size: 0.8em;
+                        font-weight: 600;
+                        color: #115c27;
+                    }
+                    h3{
+                        font-size: 1.3em;
+                        font-weight: 600;
+                        color: #115c27;
+                        margin: 0.3em 0;
+                    }
+                }
+                .lesson-instructor{
+                    margin: 2em 0.7em;
+                    padding: 1em 1.5em;
+                    box-shadow: 2px 2px 8px rgba(59, 59, 59, 0.752);
+                    border-radius: 1.3em;
+                    background: #013112;
+
+                    .title-box{
+                        width: 6em;
+                        border-radius: 1em;
+                        padding: 0.5em 1em;
+                        margin: 0.3em 0;
+                        background: #001f00;
+                        background: #fff;
+                        
+                        p.title{
+                            font-size: 1.1em;
+                            font-weight: 600;
+                            color: #fff;
+                            color: #115c27;
+                            text-align: center;
+                            margin: 0;
+                        }
+
+                    }
+                    
+                    .name{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-direction: column;
+
+                        i{
+                            font-size: 2em;
+                            color: #fff;
+                            // margin-left: 1em;
+                        }
+                        
+                        h3{
+                            margin: 0.5em 1em;
+                            font-size: 1.7em;
+                            font-weight: 600;
+                            color: #115c27;
+                            color: #fff;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+                .lesson-instruction{
+                    margin: 2em 0.7em;
+                    margin-bottom: 5em;
+                    
+                    
+                    p{
+                        font-size: 1em;
+                        font-weight: 300;
+                        color: #000000;
+                        padding: 0.5em;
+                        
+                    }
+                    
+                    p.title{
+                        font-size: 1.1em;
+                        font-weight: 600;
+                        color: #115c27;
+                        margin: 0.3em 0;
+                        border-bottom: 1px solid #000000;
+                    }
+                }
+                .animation-box{
+                    padding: 2em;
+                    margin: 1.7em;
+                    border-radius: 1.3em;
+                    box-shadow: inset 3px 8px 16px #c7c5c5ed;
+                    background: #d8eadc88;
+                    height: 32em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 0.2em dashed #01311263;
+                }
+            }
+        }
+        #workspaceLesson.workspace-lesson.more-width{
+            padding: 2em 0.3em;
+            max-height: 85vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            
+            &::-webkit-scrollbar-button{
+                color: #e3e3e3c8;
+                background: #001f00;
+                height: 0px;
+                
+            }
+            
+            &::-webkit-scrollbar-thumb{
+                border-radius: 15px;
+                background: #989898;               
+                visibility: hidden;
+                border: none;
+            }
+            
+            &::-webkit-scrollbar{
+                width: 9px;
+                background: transparent;
+            }
+
+            &:hover, &:focus{
+                &::-webkit-scrollbar-thumb{
+                    visibility: visible;
+                }
+            }
+            .lesson-section{
+                .lesson-title{
+                    padding: 1em 1.5em;
+                    box-shadow: 1px 1px 6px rgba(59, 59, 59, 0.2235294118);
+                    border-radius: 1.3em;
+                    margin: 0.5em;
+                    
+                    p{
+                        font-size: 0.8em;
+                        font-weight: 600;
+                        color: #115c27;
+                    }
+                    h3{
+                        font-size: 1.3em;
+                        font-weight: 600;
+                        color: #115c27;
+                        margin: 0.3em 0;
+                    }
+                }
+                .lesson-instructor{
+                    margin: 2em 0.7em;
+                    
+                    p.title{
+                        font-size: 0.9em;
+                        font-weight: 600;
+                        color: #115c27;
+                        margin: 0.3em 0;
+                    }
+                    
+                    h3{
+                        margin: 0 0.5em;
+                        font-size: 1.2em;
+                        font-weight: 600;
+                        color: #115c27;
+                        letter-spacing: 1px;
+                    }
+                }
+                .lesson-instruction{
+                    margin: 2em 0.7em;
+                    margin-bottom: 5em;
+                    
+                    
+                    p{
+                        font-size: 1em;
+                        font-weight: 300;
+                        color: #000000;
+                        padding: 0.5em;
+                        
+                    }
+                    
+                    p.title{
+                        font-size: 0.9em;
+                        font-weight: 600;
+                        color: #115c27;
+                        margin: 0.3em 0;
+                        border-bottom: 1px solid #000000;
+                    }
+                }
+                .animation-box{
+                    padding: 2em;
+                    border-radius: 1.3em;
+                    box-shadow: inset 1px 2px 6px #c7c5c5ed;
+                    background: #d8eadc88;
+                    height: 12em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
     }
 
 }

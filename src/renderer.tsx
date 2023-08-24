@@ -48,8 +48,8 @@ import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
     {
-      // path: "/",
-      path: "/main_window",
+      path: "/",
+      // path: "/main_window",
       element: <HomeView />,
     },
     {
@@ -68,8 +68,8 @@ const router = createBrowserRouter([
       element: <Index />
     },
     {
-      path: '/home/:class_id',
-      // path: "/main_window",
+      // path: '/home/:class_id',
+      path: "/main_window",
       element: <Index />
     }
 

@@ -1,15 +1,21 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import  { useState, CSSProperties } from "react";
 import { useNavigate, Link} from "react-router-dom";
+import PulseLoader from "react-spinners/PulseLoader";
 
 import server from "../../utils";
 
 function SectionSignUp () {
     const [feedback, setFeedback] = useState(null)
     const navigate = useNavigate()
+    const [isloading, setIsLoading] = useState(false)
+    const override: CSSProperties = {
+        fontWeight: "400",
+      };
 
     const authSignUp = (e: any) => {
+        setIsLoading(true)
         e.preventDefault()
         axios.post(`${server.absolute_url}/${server.auth_signup}`, {
                 first_name: e.target[0].value,
@@ -18,12 +24,14 @@ function SectionSignUp () {
                 password: e.target[3].value,
             }).then((res) => {
                 console.log(res.data)
+                setIsLoading(false);
                 // window.localStorage.setItem("tokens", JSON.stringify(res.data.tokens))
                 // window.localStorage.setItem("fname", JSON.stringify(res.data.first_name))
                 // window.localStorage.setItem("userid", JSON.stringify(res.data.id))
                 // navigate('/select-class')
             }).catch((err) => {
                 setFeedback(err.response.data)
+                setIsLoading(false);
             })
 
     }
@@ -50,7 +58,15 @@ function SectionSignUp () {
                     <input id="pwd" type="password" name="password"/>
                 </div>
                 <div className="submit">
-                    <button value="Submit" type="submit" form="sign-up">Sign up</button>
+                    <button value="Submit" type="submit" form="sign-up">{isloading? <PulseLoader
+                        color={"#ffffff"}
+                        loading={true}
+                        cssOverride={override}
+                        size={10}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                    /> : 'Sign up'}
+                    </button>
                 </div>
             </form>
         </div>
