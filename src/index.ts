@@ -23,12 +23,12 @@ const createWindow = (): void => {
     minWidth: 900,
     minHeight: 600,
     frame: false,
-    icon: './assets/img/noun_acetel_logo.png',
+    icon: './assets/img/noun_acetel_logo.ico',
     webPreferences: {
       webSecurity: false,
       sandbox: false,
       contextIsolation: false,
-      nodeIntegration: false,
+      nodeIntegration: true,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });
