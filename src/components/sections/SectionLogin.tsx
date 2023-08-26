@@ -71,7 +71,7 @@ function SectionLogin () {
         <div className="section-login">
             {feedback && <p className="alert">{feedback}</p>}
             <br/>
-            <form action="" onSubmit={authLogin} id="login" className="login">
+            <form action="" onSubmit={authLogin} id="login" className="rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm">
                 <div>
                     <label htmlFor="email">Email:</label>
                     <input id="email" type="text" name="username"/>

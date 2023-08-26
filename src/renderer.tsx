@@ -32,7 +32,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './assets/scss/index.css';
 import './assets/img/noun_logo.png';
 import './assets/img/acetel_logo.png'
-// import App from './app';
+import App from './app';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
@@ -46,40 +46,8 @@ import ClassSelectionView from './views/ClassSelectionView';
 import ErrorPage from "./error-page";
 // console.log('👋 This message is being logged by "renderer.js", included via webpack');
 
-const router = createBrowserRouter([
-    {
-      // path: "/",
-      path: "/main_window",
-      element: <HomeView />,
-    },
-    {
-      path: '/select-class',
-      // path: '/main_window',
-      element: <ClassSelectionView />
-    },
-    {
-      path: '/auth',
-      // path: '/main_window',
-      element: <AuthView />
-    },
-    {
-      path: '/home',
-      // path: "/main_window",
-      element: <Index />
-    },
-    {
-      path: '/home/:class_id',
-      // path: "/main_window",
-      element: <Index />
-    }
-
-  ]);
-
-
 const root = createRoot(document.getElementById("app"));
 
 root.render(
-    <React.StrictMode>
-        <RouterProvider router={router} />
-    </React.StrictMode>
+    <App />
 );
