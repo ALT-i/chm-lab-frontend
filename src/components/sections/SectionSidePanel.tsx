@@ -17,7 +17,11 @@ function SectionSidePanel (props: any) {
     const userData = JSON.parse(window.localStorage.getItem("user_data"))
     const user_fname = userData.first_name;
 
-
+    // document.addEventListener("mousemove", function(e){
+    //     const ele = document.getElementById('element');
+    //     const distance = ele.offsetLeft + ele.offsetWidth - e.pageX;
+    //     distance < 8 && distance > -0.1 ? ele.classList.add('more-width') : ele.classList.remove('more-width');
+    // });
 
     // const user_dp = JSON.parse(window.localStorage.getItem("dp"))  //Maybe get dp from local machine
     // const getInsutructor = () => {
@@ -49,7 +53,8 @@ function SectionSidePanel (props: any) {
                         <p>{user_fname}</p>
                     </div>
                     <div className="user-picture">
-                        <div className="picture"></div>
+                        {/* <div className="picture"></div> */}
+                        <i className="fa fa-user-circle-o" aria-hidden="true"></i>
                     </div>
                 </div>
                 {substances? null:<div className="continue-class">
@@ -60,7 +65,7 @@ function SectionSidePanel (props: any) {
                         </span>
                     </div>
                 </div>}
-                <div className="work">
+                <div id="element" className="work">
                     {substances && <div className="workspace-workbench-compartment">
                         <div className="workbench">
                             {/* <div className="instructor">
@@ -68,7 +73,7 @@ function SectionSidePanel (props: any) {
                             </div> */}
                             <div className="workbench-apparatus">
                                 <div className="apparatus-section">
-                                    <div className="aparatus-options-header">
+                                    <div className="apparatus-options-header">
                                         <p>Apparatus</p>
                                         <i className="fa fa-cubes" aria-hidden="true"></i>
                                     </div>
@@ -84,11 +89,23 @@ function SectionSidePanel (props: any) {
                                 </div>
                             </div>
                             <div className="workbench-substances">
-                                <div className="substance-section">{
-                                    substances && substances.map(subs => 
-                                        <p>{subs}</p>
-                                    )
-                                }</div>
+                                <div className="substance-section">
+                                    <div className="substance-options-header">
+                                        <p>Substances</p>
+                                        <i className="fa fa-cubes" aria-hidden="true"></i>
+                                    </div>
+                                    <div className="substance-options">
+                                        <ul className="substance-list">
+                                            {
+                                                substances && substances.map(subs => 
+                                                <li>{subs}</li>
+                                                )
+                                            }
+                                        </ul>
+
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>}

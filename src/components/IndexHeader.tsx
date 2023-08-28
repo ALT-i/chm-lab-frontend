@@ -4,8 +4,13 @@ import SectionMainHeader from './sections/SectionMainHeader';
 
 function IndexHeader () {
     return (
-        <div>
+        <div className='authentication float-child side-banner'>
             <SectionMainHeader />
+            <div>
+                <h3>
+                    Powered by ALT-I
+                </h3>
+            </div>
         </div>
      );
 }

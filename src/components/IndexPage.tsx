@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import ProgressChartDisplay from "./sections/ProgressChartDisplay";
 function IndexPage () {
 
     const navigate = useNavigate();
-    const { class_id } = useParams();
+    const {class_id } = useParams();
     const [chosenClass, setChosenClass] = useState(null);
     const [substances, setSubstances] = useState(null);
     const [tools, setTools] = useState(null);
@@ -21,6 +21,8 @@ function IndexPage () {
     const [classInstructor, setClassInstructor] = useState(null);
     const [classParameters, setClassParameters] = useState(null);
 
+    
+    
 
     //Fetch class details from local machine with node process and render with IPC signals
 
@@ -79,6 +81,11 @@ function IndexPage () {
 
     useEffect(() => {
         getWorkbench();
+        // document.addEventListener("mousemove", function(e){
+        //     const ele = document.getElementById('workspaceLesson');
+        //     const distance = ele.offsetLeft + ele.offsetWidth - e.pageX;
+        //     distance < 9 && distance > -0.1 ? ele.classList.add('more-width') : ele.classList.remove('more-width');
+        // });
     }, [])
 
     return (
@@ -90,19 +97,26 @@ function IndexPage () {
             <div className="index-page-main">
                 {
                     chosenClass?  
-                    <div className="workspace-lesson">
-                        <div className="lesson section">
+                    <div id="workspaceLesson" className="workspace-lesson">
+                        <div className="lesson-section">
                             <div className="lesson-title">
-                                <p>{classTitle}</p>
+                                <h3>{classTitle}</h3>
+                                <p>Parameters: {classParameters}</p>
                             </div>
                             <div className="lesson-instructor">
-                                <p>{classInstructor}</p>
+                                <div className="title-box">
+                                    <p className="title">Instructor</p>
+                                </div>
+                                <div className="name">
+                                    <h3>{classInstructor}</h3>
+                                </div>
                             </div>
                             <div className="lesson-instruction">
-                                <p>{classInstruction}</p>
+                                <p className="title">Instructions</p>
+                                <p dangerouslySetInnerHTML={{ __html: classInstruction }}></p>
                             </div>
-                            <div className="lesson-parameters">
-                                <p>{classParameters}</p>
+                            <div className="animation-box">
+                                <p>Workbench happen here</p>
                             </div>
                         </div> 
                     </div> : <ProgressChartDisplay/>
