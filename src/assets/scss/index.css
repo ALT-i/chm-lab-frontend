@@ -1049,7 +1049,7 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
 }
 .class-selector-component .class-selector .class-selection-grid ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   padding: 0;
 }
 .class-selector-component .class-selector .class-selection-grid ul li {
@@ -1198,7 +1198,7 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width {
   padding: 2em 0.3em;
-  max-height: 85vh;
+  max-height: 84.5vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -1208,10 +1208,10 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
   height: 0px;
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width::-webkit-scrollbar-thumb {
+  border: 3.5px solid #fff;
   border-radius: 15px;
   background: #989898;
   visibility: hidden;
-  border: none;
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width::-webkit-scrollbar {
   width: 9px;
@@ -1222,7 +1222,7 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-title {
   padding: 1em 1.5em;
-  box-shadow: 1px 1px 6px rgba(59, 59, 59, 0.2235294118);
+  box-shadow: 1px 1px 6px rgba(59, 59, 59, 0.326);
   border-radius: 1.3em;
   margin: 0.5em;
 }
@@ -1239,18 +1239,43 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor {
   margin: 2em 0.7em;
+  padding: 1em 1.5em;
+  box-shadow: 2px 2px 8px rgba(59, 59, 59, 0.752);
+  border-radius: 1.3em;
+  background: #013112;
 }
-.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor p.title {
-  font-size: 0.9em;
-  font-weight: 600;
-  color: #115c27;
+.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor .title-box {
+  width: 6em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
   margin: 0.3em 0;
+  background: #001f00;
+  background: #fff;
 }
-.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor h3 {
-  margin: 0 0.5em;
-  font-size: 1.2em;
+.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor .title-box p.title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #fff;
+  color: #115c27;
+  text-align: center;
+  margin: 0;
+}
+.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor .name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor .name i {
+  font-size: 2em;
+  color: #fff;
+}
+.index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instructor .name h3 {
+  margin: 0.5em 1em;
+  font-size: 1.7em;
   font-weight: 600;
   color: #115c27;
+  color: #fff;
   letter-spacing: 1px;
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instruction {
@@ -1264,7 +1289,7 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
   padding: 0.5em;
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .lesson-instruction p.title {
-  font-size: 0.9em;
+  font-size: 1.1em;
   font-weight: 600;
   color: #115c27;
   margin: 0.3em 0;
@@ -1272,13 +1297,15 @@ html body header .header-section .topbar-icons .icon-flex .icon-flex-close:hover
 }
 .index-page .index-page-main #workspaceLesson.workspace-lesson.more-width .lesson-section .animation-box {
   padding: 2em;
+  margin: 1.7em;
   border-radius: 1.3em;
-  box-shadow: inset 1px 2px 6px rgba(199, 197, 197, 0.9294117647);
+  box-shadow: inset 3px 8px 16px rgba(199, 197, 197, 0.9294117647);
   background: rgba(216, 234, 220, 0.5333333333);
-  height: 12em;
+  height: 32em;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0.2em dashed rgba(1, 49, 18, 0.3882352941);
 }
 
 .progress-chart-display {

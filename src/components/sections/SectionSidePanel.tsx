@@ -17,11 +17,7 @@ function SectionSidePanel (props: any) {
     const userData = JSON.parse(window.localStorage.getItem("user_data"))
     const user_fname = userData.first_name;
 
-    document.addEventListener("mousemove", function(e){
-        const ele = document.getElementById('element');
-        const distance = ele.offsetLeft + ele.offsetWidth - e.pageX;
-        distance < 8 && distance > -0.1 ? ele.classList.add('more-width') : ele.classList.remove('more-width');
-    });
+    
 
     // const user_dp = JSON.parse(window.localStorage.getItem("dp"))  //Maybe get dp from local machine
     // const getInsutructor = () => {

@@ -56,7 +56,7 @@ function DisplayClasses (props: any) {
             getClasses();
             // getUser();
 
-    },[])
+    },[]) 
 
     return ( 
         <div>

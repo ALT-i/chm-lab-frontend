@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,7 +10,7 @@ import SectionSidePanel from "./sections/SectionSidePanel";
 import ProgressChartDisplay from "./sections/ProgressChartDisplay";
 
 function IndexPage () {
-
+    const ref = useRef();
     const navigate = useNavigate();
     const class_id  = 1;
     const [chosenClass, setChosenClass] = useState(null);
@@ -46,12 +46,18 @@ function IndexPage () {
         console.log(substanceNames)
     }
 
+    // const element = ref.current;
+
+    // const rmScrlEvnt = () => {
+    //     element.removeEventListener('mousemove', handleClick);
+    // }
+
     const getWorkbench = () => {
         if(class_id) {
             setChosenClass(class_id);
             console.log(class_id)
 
-            axios.get(`${server.absolute_url}/${server.workspace}/1/`, {
+            axios.get(`${server.absolute_url}/${server.workspace}/${class_id}/`, {
                     headers: {
                         "Content-Type": "application/json",
                         // "authorization": token
@@ -81,11 +87,21 @@ function IndexPage () {
 
     useEffect(() => {
         getWorkbench();
+        
         document.addEventListener("mousemove", function(e){
             const ele = document.getElementById('workspaceLesson');
             const distance = ele.offsetLeft + ele.offsetWidth - e.pageX;
             distance < 9 && distance > -0.1 ? ele.classList.add('more-width') : ele.classList.remove('more-width');
         });
+
+        document.addEventListener("mousemove", function(e){
+            const lel = document.getElementById('element');
+            const space = lel.offsetLeft + lel.offsetWidth - e.pageX;
+            space < 8 && space > -0.1 ? lel.classList.add('more-width') : lel.classList.remove('more-width');
+        });
+
+
+
     }, [])
 
     return (
