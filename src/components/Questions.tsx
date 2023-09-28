@@ -230,7 +230,7 @@ const Questions = () => {
                             }}
                             >
                                 <li>
-                                    Chemicals
+                                    Substances
                                 </li>
                                 <i id="arrhead-two" className="fa fa-angle-down arrhead"></i>
                             </div>

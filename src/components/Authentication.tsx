@@ -10,7 +10,7 @@ function Authentication () {
 
 
     return ( 
-        <div className="auth-section">
+        <div className="auth-section float-child">
             {isRegistered ?
                 <div className="authentication">
                     <SectionLogin />

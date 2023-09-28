@@ -30,6 +30,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 // import './index.css';
 import './assets/scss/index.css';
+import './assets/img/noun_logo.png';
+import './assets/img/acetel_logo.png'
 // import App from './app';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -46,8 +48,8 @@ import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
     {
-      path: "/",
-      // path: "/main_window",
+      // path: "/",
+      path: "/main_window",
       element: <HomeView />,
     },
     {
@@ -66,8 +68,8 @@ const router = createBrowserRouter([
       element: <Index />
     },
     {
-      // path: '/home/:class_id',
-      path: "/main_window",
+      path: '/home/:class_id',
+      // path: "/main_window",
       element: <Index />
     }
 

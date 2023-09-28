@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -12,7 +12,7 @@ import ProgressChartDisplay from "./sections/ProgressChartDisplay";
 function IndexPage () {
     const ref = useRef();
     const navigate = useNavigate();
-    const class_id  = 1;
+    const {class_id } = useParams();
     const [chosenClass, setChosenClass] = useState(null);
     const [substances, setSubstances] = useState(null);
     const [tools, setTools] = useState(null);
@@ -87,21 +87,11 @@ function IndexPage () {
 
     useEffect(() => {
         getWorkbench();
-        
         document.addEventListener("mousemove", function(e){
             const ele = document.getElementById('workspaceLesson');
             const distance = ele.offsetLeft + ele.offsetWidth - e.pageX;
             distance < 9 && distance > -0.1 ? ele.classList.add('more-width') : ele.classList.remove('more-width');
         });
-
-        document.addEventListener("mousemove", function(e){
-            const lel = document.getElementById('element');
-            const space = lel.offsetLeft + lel.offsetWidth - e.pageX;
-            space < 8 && space > -0.1 ? lel.classList.add('more-width') : lel.classList.remove('more-width');
-        });
-
-
-
     }, [])
 
     return (
@@ -124,16 +114,15 @@ function IndexPage () {
                                     <p className="title">Instructor</p>
                                 </div>
                                 <div className="name">
-                                    <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-                                    <h3>Dr. Chan Isaac</h3>
+                                    <h3>{classInstructor}</h3>
                                 </div>
                             </div>
                             <div className="lesson-instruction">
                                 <p className="title">Instructions</p>
-                                <p>{classInstruction}</p>
+                                <p dangerouslySetInnerHTML={{ __html: classInstruction }}></p>
                             </div>
                             <div className="animation-box">
-                                <p>Animations happen here</p>
+                                <p>Workbench happen here</p>
                             </div>
                         </div> 
                     </div> : <ProgressChartDisplay/>
