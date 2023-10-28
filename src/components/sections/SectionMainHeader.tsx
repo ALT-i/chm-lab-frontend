@@ -9,10 +9,10 @@ function SectionMainHeader () {
                 <img className="img-circle" src="../../assets/img/acetel_logo.png" alt="" />
             </div>
             <div>
-                <h2 className='side-banner-text'>
+                <h2 className='bg-gray-500 text-center text-white'>
                     National Open University of Nigeria (NOUN)
                     <p/>
-                    Africa Centre of Excellence on Technology Enhanced Learning (ACETEL)
+                    Africa Centre of Excellence on Technology Enhanced Learning (ATEL)
                 </h2>
                 <h3 className='subtext'>
                     <a href='/main_window' className='subtext'>

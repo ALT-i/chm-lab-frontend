@@ -71,26 +71,24 @@ function SectionLogin () {
         <div className="section-login">
             {feedback && <p className="alert">{feedback}</p>}
             <br/>
-            <form action="" onSubmit={authLogin} id="login" className="rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm">
-                <div>
+            <form action="" onSubmit={authLogin} id="login" className="max-w-[400px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8">
+                <div className='flex flex-col text-gray-400 py-2'>
                     <label htmlFor="email">Email:</label>
-                    <input id="email" type="text" name="username"/>
+                    <input id="email" className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" name="username"/>
                 </div>
-                <div>
+                <div className='flex flex-col text-gray-400 py-2'>
                     <label htmlFor="pwd">Password:</label>
-                    <input id="pwd" type="password" name="password"/>
+                    <input id="pwd" className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" name="password"/>
                 </div>
-                <div className="submit">
-                    <button value="Submit" type="submit" form="login">{isloading? <PulseLoader
-                        color={"#ffffff"}
-                        loading={true}
-                        cssOverride={override}
-                        size={10}
-                        aria-label="Loading Spinner"
-                        data-testid="loader"
-                    /> : 'Login'}
-                    </button>
-                </div>
+                <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg' value="Submit" type="submit" form="login">{isloading? <PulseLoader
+                    color={"#ffffff"}
+                    loading={true}
+                    cssOverride={override}
+                    size={10}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                /> : 'Login'}
+                </button>
             </form>
         </div>
     );

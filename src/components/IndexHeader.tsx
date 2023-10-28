@@ -4,7 +4,7 @@ import SectionMainHeader from './sections/SectionMainHeader';
 
 function IndexHeader () {
     return (
-        <div className='authentication float-child side-banner'>
+        <div>
             <SectionMainHeader />
             <div>
                 <h3>

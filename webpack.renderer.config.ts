@@ -16,7 +16,7 @@ rules.push(
     test: /\.(jpe?g|png|gif|svg|ico|icns)$/i, 
     loader: 'file-loader',
     options: {
-      name: '/public/images/[name].[ext]'
+      name: '/src/assets/images/[name].[ext]'
     }
   }
   );

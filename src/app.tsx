@@ -50,7 +50,7 @@ function App() {
     <React.StrictMode>
         <RouterProvider router={router} />
     </React.StrictMode>
-    )
+    );
 }
 
 export default hot(module)(App);
