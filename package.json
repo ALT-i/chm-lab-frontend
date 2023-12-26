@@ -1,7 +1,7 @@
 {
   "name": "chm-lab",
   "productName": "chm-lab",
-  "version": "1.0.0",
+  "version": "0.7.0",
   "description": "CHM 191 Lab",
   "main": ".webpack/main",
   "scripts": {
@@ -25,6 +25,7 @@
     "@electron-forge/maker-zip": "^6.2.1",
     "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
     "@electron-forge/plugin-webpack": "^6.2.1",
+    "@electron-forge/publisher-github": "^7.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/jest": "^29.5.2",

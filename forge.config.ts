@@ -37,6 +37,18 @@ const config: ForgeConfig = {
       },
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'alt-i',
+          name: 'noun-chm-lab'
+        },
+        prerelease: true
+      }
+    }
+  ]
 };
 
 export default config;
