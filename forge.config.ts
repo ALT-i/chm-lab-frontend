@@ -17,7 +17,6 @@ const config: ForgeConfig = {
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
   plugins: [
-    new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
       mainConfig,
       devServer: { "liveReload": true },  
@@ -42,6 +41,8 @@ const config: ForgeConfig = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
+          authors: 'pamilerin idowu',
+          description: 'My Description',
           owner: 'alt-i',
           name: 'noun-chm-lab'
         },

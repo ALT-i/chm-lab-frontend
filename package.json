@@ -3,6 +3,10 @@
   "productName": "chm-lab",
   "version": "0.7.0",
   "description": "CHM 191 Lab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ALT-i/chm-lab-frontend.git"
+  },
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
