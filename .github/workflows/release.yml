@@ -1,13 +1,21 @@
 name: Release
 on: "push"
 
+permissions:
+  contents: read
+
 jobs:
   publish_on_linux:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@master
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+      - uses: actions/setup-node@60c11408891ef62846c29c28c2374afe5c91fad5 # master
         with:
           node-version: 20
       - name: install dependencies
@@ -21,8 +29,13 @@ jobs:
     permissions: write-all
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@master
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+      - uses: actions/setup-node@60c11408891ef62846c29c28c2374afe5c91fad5 # master
         with:
           node-version: 20
       - name: install dependencies
@@ -36,8 +49,13 @@ jobs:
     permissions: write-all
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@master
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+      - uses: actions/setup-node@60c11408891ef62846c29c28c2374afe5c91fad5 # master
         with:
           node-version: 20
       - name: install dependencies
