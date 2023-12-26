@@ -1,57 +1,39 @@
 name: Build
 on: [push, pull_request]
 
-permissions:
-  contents: read
-
 jobs:
   build_on_linux:
     runs-on: ubuntu-latest
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
-        with:
-          egress-policy: audit
-
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: actions/setup-node@60c11408891ef62846c29c28c2374afe5c91fad5 # master
-        with:
-          node-version: 20
-      - name: install dependencies
-        run: npm ci
-      - name: build
-        run: npm run make
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
+      run: npm run make
 
   build_on_mac:
     runs-on: macos-latest
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
-        with:
-          egress-policy: audit
-
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: actions/setup-node@60c11408891ef62846c29c28c2374afe5c91fad5 # master
-        with:
-          node-version: 20
-      - name: install dependencies
-        run: npm ci
-      - name: build
-        run: npm run make
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
+      run: npm run make
 
   build_on_win:
     runs-on: windows-latest
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
-        with:
-          egress-policy: audit
-
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: actions/setup-node@60c11408891ef62846c29c28c2374afe5c91fad5 # master
-        with:
-          node-version: 20
-      - name: install dependencies
-        run: npm ci
-      - name: build
-        run: npm run make
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
+      run: npm run make
