@@ -1,48 +1,25 @@
-name: Release
-on: "push"
-
+name: Release app
+on:
+  workflow_dispatch:
 jobs:
-  publish_on_linux:
-    permissions: write-all
-    runs-on: ubuntu-latest
+  build:
+    strategy:
+      matrix:
+        os: [
+            { name: 'linux', image: 'ubuntu-latest' },
+            { name: 'windows', image: 'windows-latest' },
+            { name: 'macos', image: 'macos-latest' },
+          ]
+    runs-on: ${{ matrix.os.image }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@master
+      - name: Github checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: install dependencies
-        run: npm ci
-      - name: publish
+      - run: npm ci
+      - name: Publish app
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish
-
-  publish_on_mac:
-    permissions: write-all
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@master
-        with:
-          node-version: 20
-      - name: install dependencies
-        run: npm ci
-      - name: publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish
-
-  publish_on_win:
-    permissions: write-all
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@master
-        with:
-          node-version: 20
-      - name: install dependencies
-        run: npm ci
-      - name: publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run publish
