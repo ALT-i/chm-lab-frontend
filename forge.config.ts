@@ -20,7 +20,7 @@ const config: ForgeConfig = {
     new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
       mainConfig,
-      devServer: { "liveReload": true },  
+      devServer: { hot: true, "liveReload": false },  
       devContentSecurityPolicy: "",
       renderer: {
         config: rendererConfig,
@@ -31,6 +31,10 @@ const config: ForgeConfig = {
             name: 'main_window',
             preload: {
               js: './src/preload.ts',
+              config: {
+                ...rendererConfig,
+                plugins: [],
+              },
             },
           }
         ],

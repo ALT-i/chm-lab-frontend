@@ -8,7 +8,7 @@ import loginImg from '../assets/img/home_bg.jpg';
 function AuthView () {
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
-            <div className='hidden sm:block'>
+            <div className='flex flex-col justify-center'>
                 <img className='w-full h-full object-cover' src='../assets/img/home_bg.jpg 'alt="" />
                 <IndexHeader />
             </div>

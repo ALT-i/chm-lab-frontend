@@ -22,13 +22,16 @@ const createWindow = (): void => {
     width: 1200,
     minWidth: 900,
     minHeight: 600,
-    frame: false,
+    resizable: true, maximizable: true,
+    frame: false, autoHideMenuBar: false,
     icon: './assets/img/noun_acetel_logo.ico',
+    titleBarStyle: 'hidden',
+    titleBarOverlay: true,
     webPreferences: {
       webSecurity: false,
       sandbox: false,
       contextIsolation: false,
-      nodeIntegration: true,
+      nodeIntegration: false,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });

@@ -3,10 +3,10 @@ import React from 'react';
 
 function SectionMainHeader () {
     return ( 
-        <div className="main-header">
+        <div>
             <div className="row">
-                <img className="img-circle" src="../../assets/img/noun_logo.png" alt="" />
-                <img className="img-circle" src="../../assets/img/acetel_logo.png" alt="" />
+                <img className="rounded-full" src="../../assets/img/noun_logo.png" alt="" />
+                <img className="rounded-full" src="../../assets/img/acetel_logo.png" alt="" />
             </div>
             <div>
                 <h2 className='bg-gray-500 text-center text-white'>

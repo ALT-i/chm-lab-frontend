@@ -4,11 +4,11 @@ import SectionMainHeader from './sections/SectionMainHeader';
 
 function IndexHeader () {
     return (
-        <div>
+        <div className="float-child">
             <SectionMainHeader />
             <div>
                 <h3>
-                    Powered by ALT-I
+                    Powered by ALT-
                 </h3>
             </div>
         </div>
