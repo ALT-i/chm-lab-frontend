@@ -6,6 +6,9 @@ import { app, BrowserWindow, nativeTheme, session} from 'electron';
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
+const { updateElectronApp } = require('update-electron-app');
+updateElectronApp(); // additional configuration options available
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
