@@ -44,7 +44,7 @@ const config: ForgeConfig = {
           owner: 'alt-i',
           name: 'chm-lab-frontend '
         },
-        prerelease: true
+        draft: true
       }
     }
   ]
