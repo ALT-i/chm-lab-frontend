@@ -44,10 +44,11 @@ const config: ForgeConfig = {
           owner: 'alt-i',
           name: 'chm-lab-frontend '
         },
+        prerelease: false,
         draft: true
       }
     }
-  ]
+  ],
 };
 
 export default config;
