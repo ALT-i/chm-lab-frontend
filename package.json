@@ -1,7 +1,7 @@
 {
   "name": "chm-lab",
   "productName": "chm-lab",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "CHM 191 Lab",
   "repository": {
     "type": "git",
