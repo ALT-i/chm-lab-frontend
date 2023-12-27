@@ -41,8 +41,6 @@ const config: ForgeConfig = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
-          authors: 'pamilerin idowu',
-          description: 'My Description',
           owner: 'alt-i',
           name: 'noun-chm-lab'
         },
