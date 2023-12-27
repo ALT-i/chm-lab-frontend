@@ -11,29 +11,43 @@ import { rendererConfig } from './webpack.renderer.config';
 
 const config: ForgeConfig = {
   packagerConfig: {
-    asar: true,
+    // asar: true,
+    // icon: './assets/img/noun_acetel_logo'
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
   plugins: [
-    new AutoUnpackNativesPlugin({}),
     new WebpackPlugin({
       mainConfig,
+      devServer: { "liveReload": true },  
+      devContentSecurityPolicy: "",
       renderer: {
         config: rendererConfig,
         entryPoints: [
           {
-            html: './src/index.html',
+            html: './public/index.html',
             js: './src/renderer.tsx',
             name: 'main_window',
             preload: {
               js: './src/preload.ts',
             },
-          },
+          }
         ],
       },
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'alt-i',
+          name: 'chm-lab-frontend '
+        },
+        draft: true
+      }
+    }
+  ]
 };
 
 export default config;
