@@ -11,8 +11,8 @@ import { rendererConfig } from './webpack.renderer.config';
 
 const config: ForgeConfig = {
   packagerConfig: {
-    asar: true,
-    icon: './assets/img/noun_acetel_logo'
+    // asar: true,
+    // icon: './assets/img/noun_acetel_logo'
   },
   rebuildConfig: {},
   makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
@@ -42,7 +42,7 @@ const config: ForgeConfig = {
       config: {
         repository: {
           owner: 'alt-i',
-          name: 'noun-chm-lab'
+          name: 'chm-lab-frontend '
         },
         prerelease: true
       }
